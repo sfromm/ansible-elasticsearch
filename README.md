@@ -44,11 +44,11 @@ For details on configuring Elasticsearch, refer to their
 - **elasticsearch_plugins**:  A list of dictionaries that describe
   plugins to install.  The keys are the *name* and *path*.  The default
   is:
-  ```
+```
   elasticsearch_plugins:
   - { name: 'paramedic', path: 'karmi/elasticsearch-paramedic' }
   - { name: 'head',      path: 'mobz/elasticsearch-head'       }
-  ```
+```
 - **elasticsearch_path_conf**: The configuration directory for
   Elasticsearch.  Defaults to `/etc/elasticsearch`.
 - **elasticsearch_path_data**: The directory to store index data.
