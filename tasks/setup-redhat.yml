@@ -1,0 +1,13 @@
+---
+- name: install prerequisites
+  yum: name={{ item }} state=installed
+  with_items: elasticsearch_prereqs
+
+- name: create elasticsearch yum repo
+  template: src=elasticsearch.repo.j2 dest=/etc/yum.repos.d/elasticsearch.repo
+
+- name: import rpm gpg key
+  rpm_key: key={{ elasticsearch_rpm_gpg_key }} state=present
+
+- name: install elasticsearch
+  yum: name=elasticsearch state=installed

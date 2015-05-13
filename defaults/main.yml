@@ -1,0 +1,38 @@
+---
+elasticsearch_version: 1.1
+elasticsearch_user: elasticsearch
+elasticsearch_nofile: 32000
+#
+# elasticsearch.yml
+elasticsearch_cluster_name: "elasticsearch"
+elasticsearch_node_name: "{{ ansible_fqdn }}"
+elasticsearch_is_node_master: yes
+elasticsearch_is_node_data: yes
+elasticsearch_index_number_of_shards: 5
+elasticsearch_index_number_of_replicas: 1
+elasticsearch_bootstrap_mlockall: yes
+elasticsearch_network_host: "{{ ansible_default_ipv4.address }}"
+elasticsearch_http_host: "{{ ansible_default_ipv4.address }}"
+elasticsearch_minimum_master_nodes: 1
+#
+# java
+elasticsearch_java_opts: ""
+# taken from rack-roles elasticsearch:
+#   Use 40% of memory for heap, ES will also use large amount of
+#   direct memory allocation, hopefully ending with a total around 50%
+#   of the whole available system memory 
+elasticsearch_java_heap_size: "{{ (ansible_memtotal_mb*0.4)|round|int }}m"
+#
+# paths
+elasticsearch_path_conf: /etc/elasticsearch
+elasticsearch_path_data: /var/lib/elasticsearch
+elasticsearch_path_work: /tmp/elasticsearch
+elasticsearch_path_logs: /var/log/elasticsearch
+elasticsearch_path_home: /usr/share/elasticsearch
+elasticsearch_path_plugins: /usr/share/elasticsearch/plugins
+#
+# plugins
+elasticsearch_plugin_mandatory: paramedic,head
+elasticsearch_plugins:
+  - { name: 'paramedic', path: 'karmi/elasticsearch-paramedic' }
+  - { name: 'head',      path: 'mobz/elasticsearch-head'       }

@@ -1,0 +1,3 @@
+# elasticsearch will open a lot of file descriptors.
+# See http://www.elasticsearch.org/tutorials/2011/04/06/too-many-open-files.html
+{{ elasticsearch_user }} - nofile {{ elasticsearch_nofile }}
