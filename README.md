@@ -19,7 +19,8 @@ For details on configuring Elasticsearch, refer to their
 - **elasticsearch_user**: User elasticsearch runs as.  Defaults to `elasticsearch`.
 - **elasticsearch_nofile**: Number of files *elasticsearch* user can
   open.  Defaults to `32000`.
-- **elasticsearch_cluster_name**: The cluster name.  Defaults to `elasticsearch`.
+- **elasticsearch_cluster_name**: The cluster name.  Defaults to an
+  empty string.
 - **elasticsearch_node_name**: The node name.  Defaults to the node's FQDN.
 - **elasticsearch_is_node_master**: Whether to allow this node to be
   eligible as master.  Defaults to `yes`.
