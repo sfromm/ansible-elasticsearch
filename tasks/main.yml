@@ -47,7 +47,7 @@
   command: >
     {{ elasticsearch_path_home }}/bin/plugin -install {{ item.path }}
     creates={{ elasticsearch_path_plugins }}/{{ item.name }}
-  with_items: elasticsearch_plugins
+  with_items: "{{ elasticsearch_plugins }}"
 
 - name: enable and start elasticsearch
   service: name=elasticsearch enabled=yes state=started

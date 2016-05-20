@@ -1,7 +1,7 @@
 ---
 - name: install prerequisites
   yum: name={{ item }} state=installed
-  with_items: elasticsearch_prereqs
+  with_items: "{{ elasticsearch_prereqs }}"
 
 - name: create elasticsearch yum repo
   template: src=elasticsearch.repo.j2 dest=/etc/yum.repos.d/elasticsearch.repo
