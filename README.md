@@ -14,8 +14,8 @@ Role Variables
 For details on configuring Elasticsearch, refer to their
 [documentation](http://www.elastic.co/guide/en/elasticsearch/reference/current/index.html).
 
-- **elasticsearch_version**: Version number of *elasticsearch* to
-  deploy.  Defaults to `1.1`.
+- **elasticsearch_major_version**: Version number of *elasticsearch* to
+  deploy.  Defaults to `5.x`.
 - **elasticsearch_user**: User elasticsearch runs as.  Defaults to `elasticsearch`.
 - **elasticsearch_nofile**: Number of files *elasticsearch* user can
   open.  Defaults to `32000`.

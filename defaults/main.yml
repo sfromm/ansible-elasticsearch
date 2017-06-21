@@ -1,5 +1,5 @@
 ---
-elasticsearch_version: 5.4
+elasticsearch_major_version: 5.x
 elasticsearch_user: elasticsearch
 elasticsearch_nofile: 32000
 #
