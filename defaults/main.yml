@@ -4,8 +4,10 @@ elasticsearch_user: elasticsearch
 elasticsearch_nofile: 32000
 #
 # elasticsearch.yml
-elasticsearch_cluster_name: ""
-elasticsearch_node_name: "{{ ansible_fqdn }}"
+elasticsearch_config: {}
+elasticsearch_cluster_name: "elasticsearch"
+elasticsearch_instance_name: "master"
+
 elasticsearch_is_node_master: yes
 elasticsearch_is_node_data: yes
 elasticsearch_index_number_of_shards: 5
