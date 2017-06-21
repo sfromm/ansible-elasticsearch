@@ -13,16 +13,6 @@
     group=root
     mode=0644
 
-- name: template elasticsearch defaults
-  template: >-
-    src=elasticsearch.j2
-    dest={{ elasticsearch_defaults_path }}
-    owner=root
-    group=root
-    mode=0644
-    backup=yes
-  notify: restart elasticsearch
-
 - name: template logging.yml
   template: >-
     src=logging.yml.j2
@@ -38,14 +28,14 @@
     src=elasticsearch.yml.j2
     dest=/etc/elasticsearch/elasticsearch.yml
     owner=root
-    group=root
+    group=elasticsearch
     mode=0644
     backup=yes
   notify: restart elasticsearch
 
 - name: install plugins
   command: >
-    {{ elasticsearch_path_home }}/bin/plugin -install {{ item.path }}
+    {{ elasticsearch_path_home }}/bin/elasticsearch-plugin -install {{ item.path }}
     creates={{ elasticsearch_path_plugins }}/{{ item.name }}
   with_items: "{{ elasticsearch_plugins }}"
 
