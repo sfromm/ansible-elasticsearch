@@ -2,6 +2,6 @@
 name=Elastic repository for {{ elasticsearch_major_version }} packages
 baseurl=https://artifacts.elastic.co/packages/{{ elasticsearch_major_version }}/yum
 gpgcheck=1
-gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+gpgkey={{ elasticsearch_rpm_gpg_key }}
 enabled=1
 skip_if_unavailable=1
