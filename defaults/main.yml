@@ -35,6 +35,4 @@ elasticsearch_path_plugins: /usr/share/elasticsearch/plugins
 #
 # plugins
 elasticsearch_plugin_mandatory: paramedic,head
-elasticsearch_plugins:
-  - { name: 'paramedic', path: 'karmi/elasticsearch-paramedic' }
-  - { name: 'head',      path: 'mobz/elasticsearch-head'       }
+elasticsearch_plugins: []
