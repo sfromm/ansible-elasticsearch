@@ -1,6 +1,6 @@
 # ansible managed
 
-% if elasticsearch_config %}
+{% if elasticsearch_config %}
 {{ elasticsearch_config | to_nice_yaml }}
 {% endif %}
 
@@ -20,15 +20,3 @@ path.conf: {{ elasticsearch_path_conf }}
 path.data: {{ elasticsearch_path_data }}
 
 path.logs: {{ elasticsearch_path_logs }}
-
-{% if not "security" in es_xpack_features %}
-xpack.security.enabled: false
-{% endif %}
-
-{% if not "monitoring" in es_xpack_features %}
-xpack.monitoring.enabled: false
-{% endif %}
-
-{% if not "alerting" in es_xpack_features %}
-xpack.watcher.enabled: false
-{% endif %}
