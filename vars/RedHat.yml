@@ -1,5 +1,5 @@
 ---
 elasticsearch_prereqs:
   - java-1.8.0-openjdk
-elasticsearch_rpm_gpg_key: http://packages.elasticsearch.org/GPG-KEY-elasticsearch
+elasticsearch_rpm_gpg_key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
 elasticsearch_defaults_path: /etc/sysconfig/elasticsearch
