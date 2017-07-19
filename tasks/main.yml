@@ -13,16 +13,6 @@
     group=root
     mode=0644
 
-- name: template logging.yml
-  template: >-
-    src=logging.yml.j2
-    dest=/etc/elasticsearch/logging.yml
-    owner=root
-    group=root
-    mode=0644
-    backup=yes
-  notify: restart elasticsearch
-
 - name: template elasticsearch.yml
   template: >-
     src=elasticsearch.yml.j2
